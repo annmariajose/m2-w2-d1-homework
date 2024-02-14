@@ -59,10 +59,45 @@ main h1 {
   font-family: arial;
 }
 
+main .cards .card:first-child {
+  grid-area: card1;
+}
+
+main .cards .card img {
+  grid-area: card2;
+}
+
 footer {
   height: 40px;
   background-color: rgb(129, 141, 179);
   text-align: center;
   padding-top: 20px;
   color: rgb(211, 218, 240);
+}
+
+.cards {
+  grid-gap: 5em;
+  padding: 1.5em;
+  
+  display: grid;
+}
+
+@media only screen and (max-width: 600px) {
+  .cards {
+      grid-template-columns: 1fr;
+      grid-template-rows: 60px 300px;
+
+      grid-template-areas: 
+      'card1'
+      'card2';
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .cards {
+      grid-template-columns: 1fr 1fr;
+
+      grid-template-areas: 
+      'card1 card2';
+  }
 }
